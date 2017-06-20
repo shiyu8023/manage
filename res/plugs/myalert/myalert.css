@@ -1,0 +1,105 @@
+/**电视宽带协议弹窗**/
+
+#content{
+    position:relative;
+    min-height:100%;
+}
+.alert_agreement{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color:rgba(10,10,10,.5);
+    overflow: hidden;
+}
+/**详情**/
+.alert_content{
+    position: absolute;
+    background-color:rgb(252,253,254);
+    border-radius:.2rem;
+    -moz-border-radius:.2rem;
+    -webkit-border-radius:.2rem;
+    left:.46rem;
+    right:.46rem;
+
+}
+.agreement_main{
+    top:.73rem;
+    bottom:.73rem;
+    padding:.77rem .23rem;
+
+}
+.agreement_content{
+    height:100%;
+    width:100%;
+    color:black;
+    font-size:.22rem;
+    text-align: center;
+    overflow: auto;
+}
+.agreement_title{
+    margin-bottom: .43rem;
+}
+.agreement_list{
+    list-style: decimal;
+    display:block;
+}
+.agreement_list li{
+    list-style-position:inside;
+    text-align: justify;
+}
+.agreement_list  ul{
+    list-style: lower-alpha;
+}
+/**详情**/
+/**提示**/
+.prompt_main{
+    top:1.83rem;
+    padding:.92rem .88rem .62rem .88rem;
+}
+.prompt_text{
+    font-size:.3rem;
+}
+.prompt_text .prompt_title{
+    color:rgb(47,197,254);
+    text-align: center;
+}
+.prompt_text div{
+    height:.7rem;
+    margin-top: .3rem;
+    text-align: center;
+}
+.prompt_text div .prompt_btn{
+    border:none;
+    outline: none;
+    background-color:rgb(47,197,254);
+    font-size:.36rem;
+    padding:.15rem .6rem;
+    color:white;
+    border-radius: .1rem;
+    -webkit-border-radius: .1rem;
+   -moz-border-radius: .1rem;
+}
+/**提示**/
+/**分享弹框**/
+ .tip{
+    height:3.3rem;
+    width:2.28rem;
+    background: url('tip.png') no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:.2rem;
+    right:.2rem;
+}
+/**分享弹框**/
+.close_alert{
+    display:inline-block;
+    height:.43rem;
+    width:.43rem;
+    background:url('close.png') no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:.14rem;
+    right:.24rem
+}

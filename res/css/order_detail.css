@@ -1,0 +1,159 @@
+#app {
+  height: 100%;
+  overflow: auto; }
+  #app .container .title {
+    padding: .18rem .3rem;
+    font-size: .28rem;
+    color: #0da1ff;
+    background-color: #f6f6f6;
+    border-bottom: 0.01rem solid #e6e6e6; }
+    #app .container .title p {
+      padding-left: .14rem;
+      border-left: 0.03rem solid; }
+  #app .container .handle_message .message_detail li {
+    font-size: .26rem;
+    color: #333333;
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    padding: .18rem .3rem;
+    border-bottom: 0.01rem solid #bac4c5; }
+    #app .container .handle_message .message_detail li .message_logo {
+      -webkit-box-flex: 0 0 0.31rem;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 0 0 0.31rem;
+      /* OLD - Firefox 19- */
+      -webkit-flex: 0 0 0.31rem;
+      /* Chrome */
+      -ms-flex: 0 0 0.31rem;
+      /* IE 10 */
+      flex: 0 0 0.31rem;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+      #app .container .handle_message .message_detail li .message_logo.type_logo {
+        height: .26rem;
+        background-position: 5.69211% 0%; }
+      #app .container .handle_message .message_detail li .message_logo.time_logo {
+        height: .25rem;
+        background-position: 24.57956% 0%; }
+      #app .container .handle_message .message_detail li .message_logo.home_logo {
+        height: .27rem;
+        background-position: 17.59379% 0%; }
+      #app .container .handle_message .message_detail li .message_logo.name_logo {
+        height: .29rem;
+        background-position: 30.9185% 0%; }
+      #app .container .handle_message .message_detail li .message_logo.tel_logo {
+        height: .27rem;
+        background-position: 38.42173% 0%; }
+      #app .container .handle_message .message_detail li .message_logo.address_logo {
+        height: .33rem;
+        background-position: 11.38422% 0%; }
+    #app .container .handle_message .message_detail li .message_title {
+      -webkit-box-flex: 2;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 2;
+      /* OLD - Firefox 19- */
+      -webkit-flex: 2;
+      /* Chrome */
+      -ms-flex: 2;
+      /* IE 10 */
+      flex: 2;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      text-align: center; }
+    #app .container .handle_message .message_detail li .message_text {
+      -webkit-box-flex: 4;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 4;
+      /* OLD - Firefox 19- */
+      -webkit-flex: 4;
+      /* Chrome */
+      -ms-flex: 4;
+      /* IE 10 */
+      flex: 4;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+  #app .container .handle_step .step_detail {
+    padding-bottom: 1.63rem; }
+    #app .container .handle_step .step_detail li {
+      padding: .18rem .3rem 0 .3rem;
+      position: relative; }
+      #app .container .handle_step .step_detail li .progress_line {
+        position: absolute;
+        z-index: -1;
+        top: 0.3rem;
+        bottom: -0.3rem;
+        left: .36rem;
+        border-left: 1px solid #4cbeff; }
+      #app .container .handle_step .step_detail li .step_title {
+        align-items: center;
+        -moz-align-items: center;
+        -webkit-align-items: center; }
+        #app .container .handle_step .step_detail li .step_title .progress_bar {
+          -webkit-box-flex: 0 0 0.57rem;
+          /* OLD - iOS 6-, Safari 3.1-6 */
+          -moz-box-flex: 0 0 0.57rem;
+          /* OLD - Firefox 19- */
+          -webkit-flex: 0 0 0.57rem;
+          /* Chrome */
+          -ms-flex: 0 0 0.57rem;
+          /* IE 10 */
+          flex: 0 0 0.57rem;
+          /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+          #app .container .handle_step .step_detail li .step_title .progress_bar .mark {
+            display: inline-block;
+            height: .14rem;
+            width: .14rem;
+            background-color: #4cbeff; }
+          #app .container .handle_step .step_detail li .step_title .progress_bar.progress_end .mark_border {
+            width: .18rem;
+            padding: .02rem 0;
+            text-align: center;
+            border: 0.01rem solid #4cbeff;
+            background-color: white;
+            position: relative;
+            left: -.03rem; }
+        #app .container .handle_step .step_detail li .step_title .handle_status {
+          font-size: .24rem;
+          color: #333333; }
+          #app .container .handle_step .step_detail li .step_title .handle_status.finished_order {
+            color: #4cbeff; }
+        #app .container .handle_step .step_detail li .step_title .time {
+          font-size: .22rem;
+          color: #979797;
+          text-align: right; }
+        #app .container .handle_step .step_detail li .step_title .handle_status, #app .container .handle_step .step_detail li .step_title .time {
+          -webkit-box-flex: 1;
+          /* OLD - iOS 6-, Safari 3.1-6 */
+          -moz-box-flex: 1;
+          /* OLD - Firefox 19- */
+          -webkit-flex: 1;
+          /* Chrome */
+          -ms-flex: 1;
+          /* IE 10 */
+          flex: 1;
+          /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+      #app .container .handle_step .step_detail li .step_reason {
+        margin-left: .57rem;
+        font-size: .22rem;
+        color: #979797; }
+        #app .container .handle_step .step_detail li .step_reason .worker_phone a {
+          color: #4cbeff; }
+      #app .container .handle_step .step_detail li .line {
+        margin-left: .57rem;
+        height: .18rem;
+        border-bottom: 0.01rem solid #bac4c5; }
+    #app .container .handle_step .step_detail .reminder {
+      margin-top: .18rem;
+      text-align: right;
+      padding: 0 .3rem; }
+      #app .container .handle_step .step_detail .reminder span {
+        font-size: .24rem;
+        color: #4cbeff;
+        padding: .09rem;
+        border: .01rem solid;
+        border-radius: 0.08rem;
+        -webkit-border-radius: 0.08rem;
+        -moz-border-radius: 0.08rem; }
+        #app .container .handle_step .step_detail .reminder span:active {
+          color: white;
+          background-color: #4cbeff; }
+
+/*# sourceMappingURL=order_detail.css.map */

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>办理登记</title>
+    <link rel="stylesheet" href="../res/common/css/base.css"/>
+    <link rel="stylesheet" href="../res/css/broadband_manage.css"/>
+    <link rel="stylesheet" href="../res/plugs/myalert/myalert.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+</head>
+<body >
+    <div  id="app">
+        <div class="container" >
+            <div class="header">
+                <ul>
+                    <li class="user_phone flex">
+                        <span class="phone_icon sprite_img"></span>
+                        <p class="phone_right flex">
+                            <span class="phone_title">手机号码</span>
+                            <span class="phone_text">18271408717</span>
+                            <span class="phone_edit sprite_img"></span>
+                        </p>
+                    </li>
+                    <li class="user_name flex">
+                        <span class="user_icon sprite_img"></span>
+                        <p class="name_right flex">
+                            <span class="name_title">姓名</span>
+                            <span class="name_text">张某某</span>
+                        </p>
+                    </li>
+                </ul>
+                <div class="line"></div>
+            </div>
+            <div class="main">
+                <div class="nav">
+                    <ul class="flex">
+                        <li v-for="(value,index) in broadType" :class="{active:checkedIndex == index}"  @click="choiceType(index)" v-text="value"></li>
+                    </ul>
+                </div>
+                <div class="account_content content" v-show="contentShow">
+                    <ul class="address">
+                        <li class="home flex">
+                            <span class="home_icon sprite_img"></span>
+                            <p class="home_right flex">
+                                <span class="home_title">小区</span>
+                                <span class="home_text" v-text="area"></span>
+                            </p>
+                        </li>
+                        <li class="position flex">
+                            <span class="position_icon sprite_img"></span>
+                            <p class="position_right flex">
+                                <span class="position_title">门牌号</span>
+                                <span class="position_text" v-text="address"></span>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul class="broad_packages flex">
+                        <li v-for="(v,k) in newType">
+                            <div class="circle_bg sprite_img" @click="selectNewType(k)">
+                                <div :class="{'active':selectIndex == k}">
+                                    <span class="number" v-text="v.name"><b class="unit">M</b></span>
+                                    <span class="money" v-cloak>{{v.price}}元/月</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="promise">
+                        <p class="promise_title">
+                            承诺使用188元及以上4G套餐且每月最低消费188元12个月，<span>享受100M优惠宽带套餐12个月，得1200元话费。</span>
+                        </p>
+                        <p class="promise_text flex" v-show="!isOpen">
+                            <span v-cloak>1.【{{promiseDetail[0]?promiseDetail[0].title:''}}】{{promiseDetail[0]?promiseDetail[0].text[0]:''}}</span>
+                            <a @click.prevent="openDetail">查看更多</a>
+                        </p>
+                            <ul class="promise_detail" v-show="isOpen">
+                                <li v-for=" item in promiseDetail" v-if="" v-cloak>
+                                    【{{item.title}}】<span v-if="item.text.length<1 || item.text.length == 1" v-text="item.text[0]"></span>
+                                    <ul v-if="item.text.length>1">
+                                        <li v-for="detail in item.text" v-text="detail"></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                    </div>
+                    <div class="tv">
+                        <p class="agree">
+                            <label  @click="handleAgree"><span :class="handleCheck?'checked':'unchecked'" class="sprite_img"></span>我已阅知上述内容并同意办理</label>
+                        </p>
+                        <div class="tv_content">
+                            <p class="title">
+                                <span>免费办理一年期宽带电视业务</span><br>
+                                2017年1月1日-2017年3月31日，办理20M以上宽带开户或续约的客户，可免费使用宽带电视业务1年。
+                            </p>
+                            <p class="text">
+                                注意事项：<br>
+                                1、本活动不含388宽带客户、集团代付客户、及随心王、无限量用户；<br>
+                                2、宽带电视业务优惠合约周期为1年，需同时捆绑宽带使用，合约期内不能取消宽带电视业务及宽带业务；<br>
+                                3、同一宽带客户仅能开通一个宽带电视业务，优惠合约到期后宽带电视业务按20元/月收费。<br>
+                                温馨提示：客户使用过程中出现故障可拨打13922820000热线报障。
+                            </p>
+                            <p class="show_agreement">
+                                <label><input type="checkbox" name="agreement" checked/>免费办理一年期宽带电视业务</label><span @click="showAgreement">查看协议</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <button class='btn' @click="successHandle" :class="handleCheck?'abled':'disabled'" :disabled="!handleCheck">登记装报</button>
+                    </div>
+                </div>
+                <div class="content renew_content" v-show="!contentShow">
+                    <div class="buy_packages">
+                        <p class="title">
+                            当前可续套餐：
+                        </p>
+                        <ul class="broad_packages flex">
+                            <li v-for="(v,k) in renewType">
+                                <div class="circle_bg sprite_img" @click.prevent="selectRenew(k)">
+                                    <div :class="{'active':renewIndex == k}">
+                                        <span class="number" v-text="v.name"><b class="unit">M</b></span>
+                                        <span class="money" v-cloak>{{v.price}}元/月</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="broad_des flex">
+                           <div class="speed">当前速率：<span class="number" v-text="renewDetail.name"></span>
+                               <span class="unit">Mb/s</span>
+                           </div>
+                            <div  class="due_time">到期时间：<span v-text="renewDetail.time"></span></div>
+                        </div>
+                        <p class="current_address" v-cloak>
+                            当前地址：{{county}}{{area}}{{address}}
+                        </p>
+                    </div>
+                    <div class="promise">
+                        <p class="promise_title">
+                            承诺使用58元及以上4G套餐且每月最低消费58元14个月，<span>享受20M优惠宽带套餐14个月，得840元话费。</span>
+                        </p>
+                        <ul class="promise_detail">
+                            <li v-for=" item in renewDetail.promiseDetail" v-cloak="">
+                                【{{item.title}}】<span v-if="item.text.length<1 || item.text.length == 1" v-text="item.text[0]"></span>
+                                <ul v-if="item.text.length>1">
+                                    <li v-for="detail in item.text" v-text="detail"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <p class="agree">
+                            <label @click="renewAgree"><span :class="renewCheck?'checked':'unchecked'" class="sprite_img"></span>我已阅知上述内容并同意办理</label>
+                        </p>
+                        <button class="btn" :class="renewCheck?'abled':'disabled'" onclick="window.location.href='broadband_renew.html'" :disabled="!renewCheck">登记续约</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  id="alert_part">
+        </div>
+    </div>
+</body>
+<script src="../res/common/js/rem.js"></script>
+<script src="../res/common/js/vue.min.js"></script>
+<script src="../res/common/js/http.js"></script>
+<script src="../res/plugs/myalert/myalert.js"></script>
+<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            checkedIndex:0,
+            selectIndex:0,
+            renewIndex:0,
+            broadType:['家宽开户','家宽续约'],
+            newType:"",
+            renewType:"",
+            promiseDetail:'',
+            renewDetail:'',
+            contentShow:true,
+            agreementShow:false,
+            scroll:false,
+            isOpen:false,
+            handleCheck:true,
+            renewCheck:true,
+            county:"",
+            area:"",
+            address:"",
+            tv_msg:{
+                'yd':{'title':'约定使用业务','content':['客户需承诺使用58元及以上4G套餐及20M宽带业务14个月，自办理优惠次月起生效并承诺使用至优惠期结束，不得取消或变更。']},
+                'yh':{'title':'优惠有效期','content':['本优惠在办理次月起生效，有效期14个月(新装客户在完成安装次月起生效)。']},
+                'hf':{'title':'话费到账','content':['所得话费从优惠生效月起分月返还，仅能用于宽带或流量年包消费。']},
+                'xf':{'title':'最低消费','content':['客户需承诺自本优惠生效当月起连续14个自然月，每月最低消费58元，如当月客户消费不足承诺消费金额，全球通号码当月按最低消费金额扣费，预付费号码将在次月补扣最低消费差额。']},
+                'ts':{'title':'注意事项','content':['协议有效期内限办一次。客户在协议有效期内承诺不以任何理由过户、销户或转品牌，否则，我司有权扣除客户尚未返还的话费并收取客户承诺使用期内应交纳的费用(含低消)作为违约金。','如移动号码处于欠费等非正常状态，则中国移动光宽带将被暂停使用，待移动号码缴清欠费恢复正常使用状态后方','如果因网络资源不足、管道线路不通、第三方阻挠等客观原因导致无法安装成功，本合约自动终止，双方互不承担责任。','优惠到期后，如您未续约或办理其他优惠方案，为保证您的正常使用，系统将自动为您转为对应速率的月套餐（20M资费：60元/月）。']}
+            },
+            success_handle:'您已经成功登记免费办理一年宽带和宽带电视业务，我们将会有专人联系您。'
+
+        },
+        created:function(){
+            var me = this;
+            me.$indicator.open();
+            http(axios,'get','data.json').then(function(data){
+                if(data){
+                    me.$indicator.close();
+                    data = data.data.data;
+                    me.county = data.county;
+                    me.area = data.area;
+                    me.address = data.address;
+                    me.newType = data.newType;
+                    me.renewType = data.renewType;
+                    me.promiseDetail = me.newType[me.selectIndex].promiseDetail;
+                    me.renewDetail = me.renewType[me.renewIndex];
+                }
+            }).catch(function(e){
+                me.$indicator.close();
+                me.$toast({
+                    message:e,
+                    position: 'bottom',
+                    duration: 2000
+                });
+                Promise.reject(e);
+            });
+        },
+        methods:{
+            choiceType:function(index){
+                this.checkedIndex = index;
+            },
+            selectNewType:function(index){
+                this.selectIndex = index;
+            },
+            selectRenew:function(index){
+                this.renewIndex = index;
+            },
+            showAgreement:function(){
+                sweet({type:'1',msg:this.tv_msg});
+
+            },
+            successHandle:function(){
+                sweet({type:'2',msg:this.success_handle,btnText:'确定',title:''});
+
+            },
+            openDetail:function(){
+                this.isOpen = true;
+            },
+            handleAgree:function(){
+                this.handleCheck = !this.handleCheck;
+            },
+            renewAgree:function(){
+                this.renewCheck = !this.renewCheck;
+            }
+
+        },
+        watch:{
+            checkedIndex:function(){
+                this.contentShow = !this.contentShow;
+            },
+            selectIndex:function(){
+                this.promiseDetail = this.newType[this.selectIndex].promiseDetail;
+            },
+            renewIndex:function(){
+                this.renewDetail = this.renewType[this.renewIndex];
+            }
+        }
+    })
+
+</script>
+</html>

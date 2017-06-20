@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>我的宽带</title>
+    <link rel="stylesheet" href="../res/common/css/base.css"/>
+    <link rel="stylesheet" href="../res/css/order_detail.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="handle_message">
+                <div class="title">
+                    <p>办理信息</p>
+                </div>
+                <div class="message_detail">
+                    <ul>
+                        <li class="flex">
+                            <span class="message_logo type_logo sprite_img"></span>
+                            <span class="message_title">套&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;餐：</span>
+                            <span class="message_text">100M 0元／月套餐</span>
+                        </li>
+                        <li class="flex">
+                            <span class="message_logo time_logo sprite_img"></span>
+                            <span class="message_title">下单时间：</span>
+                            <span class="message_text">2016-09-10 12:12:12</span>
+                        </li>
+                        <li class="flex">
+                            <span class="message_logo home_logo sprite_img"></span>
+                            <span class="message_title">小&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：</span>
+                            <span class="message_text">凯丰花园</span>
+                        </li>
+                        <li class="flex">
+                            <span class="message_logo name_logo sprite_img"></span>
+                            <span class="message_title">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                            <span class="message_text">张某</span>
+                        </li>
+                        <li class="flex">
+                            <span class="message_logo tel_logo sprite_img"></span>
+                            <span class="message_title">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</span>
+                            <span class="message_text">18271408717</span>
+                        </li>
+                        <li class="flex">
+                            <span class="message_logo address_logo sprite_img"></span>
+                            <span class="message_title">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span>
+                            <span class="message_text">深圳市福田区凯丰花园3栋2座202单元</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="handle_step">
+                <div class="title">
+                    <p>办理进度</p>
+                </div>
+                <div class="step_detail">
+                    <ul>
+                        <li>
+                            <span class="progress_line" v-show="!isReminder"></span>
+                            <div class="step_title flex">
+                                <div class="progress_bar">
+                                     <div class="mark_border">
+                                         <span class="mark"></span>
+                                    </div>
+                                </div>
+                                <div class="handle_status">下单成功</div>
+                                <div class="time">2016-8-23 22:22:22</div>
+                            </div>
+                            <div class="step_reason">
+                                <p class="worker_time"></p>
+                                <p class="worker_name"></p>
+                                <p class="worker_phone"></p>
+                            </div>
+                            <div class="line"></div>
+                        </li>
+                        <li v-show="isReminder">
+                            <span class="progress_line"></span>
+                            <div class="step_title flex">
+                               <div class="progress_bar">
+                                    <div class="mark_border">
+                                        <span class="mark"></span>
+                                    </div>
+                                </div>
+                                <div class="handle_status">预约成功（第一次）</div>
+                                <div class="time">2016-8-23 22:22:22</div>
+                            </div>
+                            <div class="step_reason">
+                                <p class="worker_time">预约时间：2016-09001</p>
+                                <p class="worker_name">安装人员：张某（成功安装5000单）</p>
+                                <p class="worker_phone">电话：<a href="tel:18271408717">18271408717</a></p>
+                            </div>
+                            <div class="line"></div>
+                        </li>
+                        <li v-show="isReminder" >
+                            <!--<span class="progress_line"></span>-->
+                            <div class="step_title flex">
+                                <div class="progress_bar progress_end">
+                                    <div class="mark_border">
+                                        <span class="mark"></span>
+                                    </div>
+                                </div>
+                                <div class="handle_status finished_order">安装成功</div>
+                                <div class="time">2016-8-23 22:22:22</div>
+                            </div>
+                            <div class="step_reason">
+                                <p class="worker_time"></p>
+                                <p class="worker_name"></p>
+                                <p class="worker_phone"></p>
+                            </div>
+                            <div class="line"></div>
+                        </li>
+                        <li v-show="!isReminder">
+                            <!--<span class="progress_line"></span>-->
+                            <div class="step_title flex">
+                                <div class="progress_bar progress_end">
+                                    <div class="mark_border">
+                                        <span class="mark"></span>
+                                    </div>
+                                </div>
+                                <div class="handle_status finished_order">催单成功</div>
+                                <div class="time">2016-8-23 22:22:22</div>
+                            </div>
+                            <div class="line"></div>
+                        </li>
+                    </ul>
+                    <div class="reminder" v-show="!isReminder">
+                        <span @click="reminder">我要催单</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../res/common/js/rem.js"></script>
+<script src="../res/common/js/vue.min.js"></script>
+<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+<script>
+    new Vue({
+       el:'#app',
+        data:{
+            type:1,
+            isReminder:false
+        },
+       methods:{
+           reminder:function(){
+               var me = this;
+               me.$indicator.open();
+               setTimeout(function(){ me.$indicator.close(); me.$toast({message:'催单成功',position:'bottom'});me.type=2},3000)
+           }
+       },
+        watch:{
+            type:function(){
+                if(this.type == 1){
+                   this.isReminder = true;
+                }else{
+                    this.isReminder = false;
+                }
+            }
+        }
+    })
+</script>
+</html>

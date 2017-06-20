@@ -1,0 +1,88 @@
+@import "../common/mixin.scss";
+.container{
+  .header{
+    height:2.6rem;
+    img{
+      display:inline-block;
+      height:100%;
+      width:100%;
+    }
+  }
+  .main{
+    .nav{
+      height:1.42rem;
+      padding:.1rem 0;
+      @include boxSizing(border-box);
+      border-bottom:.01rem solid rgba(7,17,255,.1);
+      ul{
+        li{
+          @include flexible(1);
+          font-size:.22rem;
+          text-align: center;
+          position: relative;
+          a{
+            display:block;
+            color:black;
+            .nav_logo{
+              display: inline-block;
+              height:.77rem;
+              width:.77rem;
+              &.register{
+                @include bgPosition(804,310,77,77,181,65);
+              }
+              &.discount{
+                @include bgPosition(804,310,77,77,0,67);
+              }
+              &.position{
+                @include bgPosition(804,310,77,77,90,67);
+              }
+              &.user{
+                @include bgPosition(804,310,77,77,275,66);
+              }
+            }
+            .hot{
+              display:inline-block;
+              position:absolute;
+              height:.24rem;
+              width:.4rem;
+              @include bgPosition(804,310,40,24,710,0);
+              right:0;
+              top:.03rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .rules{
+    position:absolute;
+    top:4.02rem;
+    bottom:0;
+    left:0;
+    right:0;
+    .content{
+      min-height:100%;
+      position: relative;
+      @include bgImage('../common/img/bg_1.png');
+      .content_main{
+        padding-bottom:.79rem;
+        h2{
+          font-size:.32rem;
+          text-align: center;
+          padding:.2rem;
+        }
+        .rule{
+          margin-bottom:.3rem;
+        }
+        .title,.text{
+          padding:0 .2rem .17rem .2rem;
+          font-size:.2rem;
+        }
+        .prompt_title{
+          color:rgb(196,88,33);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

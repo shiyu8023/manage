@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>我的宽带</title>
+    <link rel="stylesheet" href="../res/common/css/base.css"/>
+    <link rel="stylesheet" href="../res/plugs/myalert/myalert.css"/>
+    <link rel="stylesheet" href="../res/css/my_broadband.css"/>
+<body>
+    <div id="app">
+        <div class="no_message clearfix" v-show="!isMessage">
+            <div class="top">
+                <p class="title">暂无您的家宽订单信息，如需办理请点击下方按钮。</p>
+                <button class="btn handle_btn">我要办理家宽</button>
+            </div>
+            <div class="bottom">
+                <span class="title">我要分享：</span>
+                <span class="share wechat sprite_img" @click="alert_share"></span>
+                <span class="share friend sprite_img" @click="alert_share"></span>
+                <span class="share zone sprite_img" @click="alert_share"></span>
+            </div>
+        </div>
+        <div class="message" v-show="isMessage">
+            <div class="order_content">
+                    <ul>
+                        <li>
+                            <div class="order_title flex">
+                                <span class="time">下单时间：2016-09-10 12:12:12</span>
+                                <span class="status">进行中</span>
+                            </div>
+                            <div class="order_basic">
+                                <span class="type">套餐：20M宽带</span><br>
+                                <span class="address">小区：福田区凯丰花园</span>
+                            </div>
+                            <div class="detail_btn">
+                                <span onclick="window.location.href='order_detail.html'">详情</span>
+                            </div>
+                            <div class="order_logo" style="display:none"></div>
+                        </li>
+                        <li>
+                            <div class="order_title flex">
+                                <span class="time">下单时间：2016-09-10 12:12:12</span>
+                                <span class="status" style="display: none">进行中</span>
+                            </div>
+                            <div class="order_basic">
+                                <span class="type">套餐：20M宽带</span><br>
+                                <span class="address">小区：福田区凯丰花园</span>
+                            </div>
+                            <div class="detail_btn">
+                                <span style="display:none">详情</span>
+                            </div>
+                            <div class="order_logo end_order sprite_img"></div>
+                        </li>
+                        <li>
+                            <div class="order_title flex">
+                                <span class="time">下单时间：2016-09-10 12:12:12</span>
+                                <span class="status" style="display: none">进行中</span>
+                            </div>
+                            <div class="order_basic">
+                                <span class="type">套餐：20M宽带</span><br>
+                                <span class="address">小区：福田区凯丰花园</span>
+                            </div>
+                            <div class="detail_btn">
+                                <span style="display:none">详情</span>
+                            </div>
+                            <div class="order_logo finish_order sprite_img"></div>
+                        </li>
+                    </ul>
+            </div>
+            <div class="bottom">
+                 <button class="btn handle_btn" onclick="window.location.href='broadband_manage.html'">我要新开户</button>
+            </div>
+        </div>
+        <div  id="alert_part">
+        </div>
+    </div>
+</body>
+<script src="../res/common/js/rem.js"></script>
+<script src="../res/common/js/vue.min.js"></script>
+<script src="../res/plugs/myalert/myalert.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            isMessage:true
+        },
+        methods:{
+            alert_share:function(){
+                sweet({type:'3'});
+            }
+        }
+    })
+
+</script>
+</html>

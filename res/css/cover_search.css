@@ -1,0 +1,44 @@
+.container .header {
+  height: 1.89rem;
+  padding: 0 .2rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+  .container .header .position_search {
+    padding: .2rem 0; }
+    .container .header .position_search input {
+      height: .58rem;
+      width: 100%;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      border: 0.05rem solid #bcdede;
+      font-size: .24rem;
+      padding-left: .1rem; }
+  .container .header .prompt {
+    font-size: .2rem;
+    color: #d9d9d9;
+    border-bottom: .01rem solid;
+    padding-bottom: .2rem; }
+.container .main {
+  position: absolute;
+  top: 1.89rem;
+  right: 0;
+  left: 0;
+  bottom: 0; }
+  .container .main .main_content {
+    min-height: 100%;
+    background: url("../common/img/bg_1.png") no-repeat;
+    background-size: 100% 100%;
+    padding: 0 .2rem;
+    position: relative; }
+    .container .main .main_content .position_result {
+      padding-bottom: .79rem; }
+      .container .main .main_content .position_result ul li {
+        font-size: .24rem;
+        color: #a6a6a6;
+        margin-bottom: .18rem; }
+      .container .main .main_content .position_result .register {
+        margin: .29rem 0; }
+
+/*# sourceMappingURL=cover_search.css.map */

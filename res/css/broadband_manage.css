@@ -1,0 +1,342 @@
+#app {
+  height: 100%;
+  overflow: auto; }
+  #app .header li {
+    padding: 0.25rem 0 0 0.3rem; }
+    #app .header li.user_phone .phone_icon {
+      -webkit-box-flex: 0.25rem 0 0;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 0.25rem 0 0;
+      /* OLD - Firefox 19- */
+      -webkit-flex: 0.25rem 0 0;
+      /* Chrome */
+      -ms-flex: 0.25rem 0 0;
+      /* IE 10 */
+      flex: 0.25rem 0 0;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      height: .4rem;
+      background-position: 0% 0%;
+      position: relative;
+      top: .04rem; }
+    #app .header li.user_phone .phone_right {
+      border-bottom: 0.01rem solid #bac4c5; }
+      #app .header li.user_phone .phone_right .phone_edit {
+        -webkit-box-flex: 0.38rem 0 0;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 0.38rem 0 0;
+        /* OLD - Firefox 19- */
+        -webkit-flex: 0.38rem 0 0;
+        /* Chrome */
+        -ms-flex: 0.38rem 0 0;
+        /* IE 10 */
+        flex: 0.38rem 0 0;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        height: .36rem;
+        background-position: 79.50392% 0%;
+        margin-left: .13rem;
+        position: relative;
+        top: .04rem; }
+    #app .header li.user_name .user_icon {
+      flex: 0.35rem 0 0;
+      height: .4rem;
+      background-position: 57.86736% 0%;
+      position: relative;
+      top: .04rem; }
+    #app .header li .phone_right, #app .header li .name_right {
+      -webkit-box-flex: 1;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 1;
+      /* OLD - Firefox 19- */
+      -webkit-flex: 1;
+      /* Chrome */
+      -ms-flex: 1;
+      /* IE 10 */
+      flex: 1;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      font-size: .32rem;
+      margin-left: .2rem;
+      padding-bottom: .25rem; }
+    #app .header li .phone_title, #app .header li .name_title {
+      -webkit-box-flex: 1.94rem 0 0;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 1.94rem 0 0;
+      /* OLD - Firefox 19- */
+      -webkit-flex: 1.94rem 0 0;
+      /* Chrome */
+      -ms-flex: 1.94rem 0 0;
+      /* IE 10 */
+      flex: 1.94rem 0 0;
+      /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+  #app .header .line {
+    height: .2rem;
+    border-top: 0.01rem solid #bac4c5;
+    background-color: #eff6f3; }
+  #app .main .nav ul li {
+    -webkit-box-flex: 1;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;
+    /* OLD - Firefox 19- */
+    -webkit-flex: 1;
+    /* Chrome */
+    -ms-flex: 1;
+    /* IE 10 */
+    flex: 1;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    font-size: .26rem;
+    text-align: center;
+    padding: .23rem 0;
+    border: 0.01rem solid #bac4c5;
+    color: #656266; }
+    #app .main .nav ul li.active {
+      border: none;
+      border-top: 0.04rem solid #26b9fe;
+      color: #26b9fe; }
+  #app .main .content {
+    padding: 0 .3rem .4rem .3rem; }
+    #app .main .content .address li {
+      padding: 0.25rem 0 0 0.3rem; }
+      #app .main .content .address li.position {
+        border-bottom: 0.01rem solid #bac4c5; }
+        #app .main .content .address li.position .position_icon {
+          -webkit-box-flex: 0.36rem 0 0;
+          /* OLD - iOS 6-, Safari 3.1-6 */
+          -moz-box-flex: 0.36rem 0 0;
+          /* OLD - Firefox 19- */
+          -webkit-flex: 0.36rem 0 0;
+          /* Chrome */
+          -ms-flex: 0.36rem 0 0;
+          /* IE 10 */
+          flex: 0.36rem 0 0;
+          /* NEW, Spec - Opera 12.1, Firefox 20+ */
+          height: .33rem;
+          background-position: 65.10417% 0%;
+          position: relative;
+          top: .04rem; }
+      #app .main .content .address li.home .home_icon {
+        -webkit-box-flex: 0.36rem 0 0;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 0.36rem 0 0;
+        /* OLD - Firefox 19- */
+        -webkit-flex: 0.36rem 0 0;
+        /* Chrome */
+        -ms-flex: 0.36rem 0 0;
+        /* IE 10 */
+        flex: 0.36rem 0 0;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        height: .34rem;
+        background-position: 72.26563% 0%;
+        position: relative;
+        top: .04rem; }
+      #app .main .content .address li .home_right, #app .main .content .address li .position_right {
+        -webkit-box-flex: 1;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1;
+        /* OLD - Firefox 19- */
+        -webkit-flex: 1;
+        /* Chrome */
+        -ms-flex: 1;
+        /* IE 10 */
+        flex: 1;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        font-size: .32rem;
+        margin-left: .2rem;
+        padding-bottom: .25rem; }
+      #app .main .content .address li .home_right {
+        border-bottom: 0.01rem solid #bac4c5; }
+      #app .main .content .address li .home_title, #app .main .content .address li .position_title {
+        -webkit-box-flex: 1.94rem 0 0;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1.94rem 0 0;
+        /* OLD - Firefox 19- */
+        -webkit-flex: 1.94rem 0 0;
+        /* Chrome */
+        -ms-flex: 1.94rem 0 0;
+        /* IE 10 */
+        flex: 1.94rem 0 0;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+    #app .main .content .broad_packages {
+      margin-top: .42rem; }
+      #app .main .content .broad_packages li {
+        -webkit-box-flex: 1;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1;
+        /* OLD - Firefox 19- */
+        -webkit-flex: 1;
+        /* Chrome */
+        -ms-flex: 1;
+        /* IE 10 */
+        flex: 1;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+        #app .main .content .broad_packages li .circle_bg {
+          height: 1.09rem;
+          width: 1.17rem;
+          background-position: 0% 92.53731%;
+          margin: 0 auto; }
+          #app .main .content .broad_packages li .circle_bg div {
+            height: 1.03rem;
+            width: 1.03rem;
+            border: 0.01rem solid #989898;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            margin: 0 auto;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            position: relative; }
+            #app .main .content .broad_packages li .circle_bg div.active {
+              background-color: rgba(38, 185, 254, 0.7); }
+              #app .main .content .broad_packages li .circle_bg div.active .money, #app .main .content .broad_packages li .circle_bg div.active .number {
+                color: white; }
+            #app .main .content .broad_packages li .circle_bg div .number {
+              font-size: 0.3rem;
+              color: #26b9fe;
+              position: absolute;
+              top: .04rem;
+              left: 0;
+              right: 0;
+              text-align: center; }
+              #app .main .content .broad_packages li .circle_bg div .number .unit {
+                font-weight: normal;
+                font-size: 0.2rem; }
+            #app .main .content .broad_packages li .circle_bg div .money {
+              font-size: 0.2rem;
+              color: #d9d9d9;
+              position: absolute;
+              bottom: .06rem;
+              left: 0;
+              right: 0;
+              text-align: center; }
+    #app .main .content .promise {
+      margin-top: .38rem;
+      font-size: .22rem;
+      padding-bottom: .22rem;
+      border-bottom: 0.01rem solid #bac4c5; }
+      #app .main .content .promise .promise_title {
+        margin-bottom: .23rem; }
+        #app .main .content .promise .promise_title span {
+          color: #fd4e68; }
+      #app .main .content .promise .promise_text {
+        color: black; }
+        #app .main .content .promise .promise_text span {
+          -webkit-box-flex: 5;
+          /* OLD - iOS 6-, Safari 3.1-6 */
+          -moz-box-flex: 5;
+          /* OLD - Firefox 19- */
+          -webkit-flex: 5;
+          /* Chrome */
+          -ms-flex: 5;
+          /* IE 10 */
+          flex: 5;
+          /* NEW, Spec - Opera 12.1, Firefox 20+ */
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        #app .main .content .promise .promise_text a {
+          -webkit-box-flex: 1;
+          /* OLD - iOS 6-, Safari 3.1-6 */
+          -moz-box-flex: 1;
+          /* OLD - Firefox 19- */
+          -webkit-flex: 1;
+          /* Chrome */
+          -ms-flex: 1;
+          /* IE 10 */
+          flex: 1;
+          /* NEW, Spec - Opera 12.1, Firefox 20+ */
+          color: #26b9fe;
+          text-decoration: underline; }
+      #app .main .content .promise .promise_detail {
+        color: black;
+        list-style: decimal;
+        display: block; }
+        #app .main .content .promise .promise_detail li {
+          list-style-position: inside;
+          text-align: justify; }
+          #app .main .content .promise .promise_detail li ul {
+            list-style: lower-alpha; }
+    #app .main .content .tv .tv_content {
+      padding: .28rem .24rem;
+      background-color: #e8edf0;
+      border-radius: 0.2rem;
+      -webkit-border-radius: 0.2rem;
+      -moz-border-radius: 0.2rem; }
+      #app .main .content .tv .tv_content .title {
+        font-size: .22rem;
+        color: dimgray;
+        margin-bottom: .37rem; }
+        #app .main .content .tv .tv_content .title span {
+          font-size: .28rem;
+          color: #fe0202; }
+      #app .main .content .tv .tv_content .text {
+        font-size: .22rem;
+        color: dimgray; }
+      #app .main .content .tv .tv_content .show_agreement {
+        font-size: .2rem;
+        color: #fe0202;
+        margin-top: .21rem; }
+        #app .main .content .tv .tv_content .show_agreement input {
+          outline: none;
+          margin-right: .12rem; }
+        #app .main .content .tv .tv_content .show_agreement span {
+          font-size: .24rem;
+          color: #3ba4f5;
+          text-decoration: underline;
+          margin-left: .2rem; }
+    #app .main .content .footer {
+      margin-top: .2rem; }
+      #app .main .content .footer button {
+        width: 100%;
+        font-size: .32rem;
+        color: #fafafa;
+        border-radius: 0.1rem;
+        -webkit-border-radius: 0.1rem;
+        -moz-border-radius: 0.1rem;
+        height: .9rem;
+        line-height: .9rem; }
+        #app .main .content .footer button.abled {
+          background-color: #3dd8fe; }
+        #app .main .content .footer button.disabled {
+          background-color: #e6e6e6; }
+  #app .main .renew_content {
+    font-size: .22rem;
+    color: #333333; }
+    #app .main .renew_content .buy_packages {
+      padding: .33rem 0; }
+      #app .main .renew_content .buy_packages .broad_packages {
+        margin: .15rem 0; }
+      #app .main .renew_content .buy_packages .broad_des div {
+        -webkit-box-flex: 1;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1;
+        /* OLD - Firefox 19- */
+        -webkit-flex: 1;
+        /* Chrome */
+        -ms-flex: 1;
+        /* IE 10 */
+        flex: 1;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+        #app .main .renew_content .buy_packages .broad_des div.speed .number, #app .main .renew_content .buy_packages .broad_des div.speed .unit, #app .main .renew_content .buy_packages .broad_des div.due_time span {
+          color: #3ba4f5; }
+        #app .main .renew_content .buy_packages .broad_des div.speed .number, #app .main .renew_content .buy_packages .broad_des div.due_time span {
+          font-size: .3rem; }
+      #app .main .renew_content .buy_packages .current_address {
+        margin-top: .28rem; }
+    #app .main .renew_content .promise {
+      margin-top: 0.17rem; }
+    #app .main .renew_content .footer .agree {
+      margin-bottom: .2rem; }
+  #app .main .agree {
+    font-size: .26rem;
+    padding: .2rem 0; }
+    #app .main .agree .checked, #app .main .agree .unchecked {
+      display: inline-block;
+      height: .32rem;
+      width: .32rem;
+      vertical-align: top;
+      margin-right: .08rem; }
+    #app .main .agree .checked {
+      background-position: 44.81865% 0%; }
+    #app .main .agree .unchecked {
+      background-position: 51.68394% 0%; }
+
+/*# sourceMappingURL=broadband_manage.css.map */

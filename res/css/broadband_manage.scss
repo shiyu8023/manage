@@ -1,0 +1,292 @@
+@import "../common/mixin.scss";
+#app{
+  height:100%;
+  overflow:auto;
+  .header{
+    li{
+      padding:.25rem 0 0 .3rem ;
+      &.user_phone{
+        .phone_icon{
+          @include flexible(.25rem 0 0 );
+          height:.4rem;
+          @include bgPosition(804,310,25,40,0,0);
+          position: relative;
+          top:.04rem;
+        }
+        .phone_right{
+          border-bottom:.01rem solid rgb(186,196,197);
+          .phone_edit{
+            @include flexible(.38rem 0 0);
+            height:.36rem;
+            @include bgPosition(804,310,38,36,609,0);
+            margin-left:.13rem;
+            position: relative;
+            top:.04rem;
+          }
+        }
+      }
+      &.user_name .user_icon{
+        flex:.35rem 0 0 ;
+        height:.4rem;
+        @include bgPosition(804,310,35,40,445,0);
+        position: relative;
+        top:.04rem;
+      }
+      .phone_right,.name_right{
+        @include flexible(1);
+        font-size: .32rem;
+        margin-left: .2rem;
+        padding-bottom:.25rem;
+      }
+      .phone_title,.name_title{
+        @include flexible(1.94rem 0 0);
+      }
+    }
+    .line{
+      height:.2rem;
+      border-top:.01rem solid rgb(186,196,197);
+      background-color: rgb(239,246,243);
+    }
+  }
+  .main{
+    .nav ul{
+      li{
+        @include flexible(1);
+        font-size: .26rem;
+        text-align: center;
+        padding:.23rem 0;
+        border:.01rem solid rgb(186,196,197);
+        color:rgb(101,98,102);
+        &.active{
+          border:none;
+          border-top:.04rem solid rgb(38,185,254);
+          color:rgb(38,185,254);
+        }
+      }
+    }
+    .content{
+      padding: 0 .3rem .4rem .3rem;
+      .address{
+        li{
+          padding:.25rem 0 0 .3rem ;
+          &.position{
+            border-bottom:.01rem solid rgb(186,196,197);
+            .position_icon{
+              @include flexible(.36rem 0 0);
+              height:.33rem;
+              @include bgPosition(804,310,36,33,500,0);
+              position: relative;
+              top:.04rem;
+            }
+          }
+          &.home .home_icon{
+            @include flexible(.36rem 0 0);
+            height:.34rem;
+            @include bgPosition(804,310,36,34,555,0);
+            position: relative;
+            top:.04rem;
+          }
+          .home_right,.position_right{
+            @include flexible(1);
+            font-size:.32rem;
+            margin-left: .2rem;
+            padding-bottom: .25rem;
+          }
+          .home_right{
+            border-bottom:.01rem solid rgb(186,196,197);
+          }
+          .home_title,.position_title{
+            @include flexible(1.94rem 0 0);
+          }
+        }
+      }
+      .broad_packages{
+        margin-top:.42rem;
+        li{
+          @include flexible(1);
+          .circle_bg{
+            height:1.09rem;
+            width:1.17rem;
+            @include bgPosition(804,310,117,109,0,186);
+            margin: 0 auto;
+            div{
+              height:1.03rem;
+              width:1.03rem;
+              border:.01rem solid rgb(152,152,152);
+             @include boxSizing(border-box);
+              margin: 0 auto;
+             @include borderRadius(50%);
+              position: relative;
+              &.active{
+                background-color:rgba(38,185,254,.7) ;
+                .money,.number{
+                  color:white
+                }
+              }
+              .number{
+                font-size: 0.3rem;
+                color:rgb(38,185,254);
+                position: absolute;
+                top:.04rem;
+                left:0;
+                right:0;
+                text-align: center;
+                .unit{
+                  font-weight:normal;
+                  font-size:0.2rem;
+                }
+              }
+              .money{
+                font-size: 0.2rem;
+                color:rgb(217,217,217);;
+                position: absolute;
+                bottom:.06rem;
+                left:0;
+                right:0;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+      .promise{
+        margin-top: .38rem;
+        font-size:.22rem;
+        padding-bottom:.22rem;
+        border-bottom:.01rem solid rgb(186,196,197);
+        .promise_title {
+          margin-bottom:.23rem;
+          span{
+            color:rgb(253,78,104)
+          }
+        }
+        .promise_text{
+          color:black;
+          span{
+            @include flexible(5);
+            white-space:nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          a{
+            @include flexible(1);
+            color:rgb(38,185,254);
+            text-decoration: underline;
+          }
+        }
+        .promise_detail{
+          color:black;
+          list-style: decimal;
+          display:block;
+          li{
+            list-style-position:inside;
+            text-align: justify;
+            ul{
+              list-style: lower-alpha;
+            }
+          }
+        }
+      }
+      .tv{
+        .tv_content{
+          padding:.28rem .24rem;
+          background-color: rgb(232,237,240);
+         @include borderRadius(.2rem);
+          .title{
+            font-size:.22rem;
+            color:rgb(105,105,105);
+            margin-bottom:.37rem;
+            span{
+              font-size:.28rem;
+              color:rgb(254,2,2);
+            }
+          }
+          .text{
+            font-size:.22rem;
+            color:rgb(105,105,105)
+          }
+          .show_agreement{
+            font-size:.2rem;
+            color:rgb(254,2,2);
+            margin-top: .21rem;
+            input{
+              outline: none;
+              margin-right: .12rem;
+            }
+            span{
+              font-size:.24rem;
+              color:rgb(59,164,245);
+              text-decoration:underline;
+              margin-left: .2rem;
+            }
+          }
+        }
+      }
+      .footer{
+        margin-top:.2rem;
+        button{
+          width:100%;
+          font-size: .32rem;
+          color:rgb(250,250,250);
+         @include borderRadius(.1rem);
+          height:.9rem;
+          line-height:.9rem;
+          &.abled{
+            background-color:rgb(61,216,254)
+          }
+          &.disabled{
+            background-color:rgb(230,230,230);
+          }
+        }
+      }
+    }
+    .renew_content{
+      font-size:.22rem;
+      color:rgb(51,51,51);
+      .buy_packages{
+        padding:.33rem 0;
+        .broad_packages{
+          margin:.15rem 0;
+        }
+        .broad_des{
+          div{
+           @include flexible(1);
+            &.speed .number,&.speed .unit,&.due_time span{
+              color:rgb(59,164,245)
+            }
+            &.speed .number,&.due_time span{
+              font-size:.3rem;
+            }
+          }
+        }
+        .current_address{
+          margin-top: .28rem;
+        }
+      }
+      .promise{
+        margin-top:.17rem ;
+      }
+      .footer .agree{
+        margin-bottom: .2rem;
+      }
+    }
+    .agree{
+      font-size:.26rem;
+      padding:.2rem 0;
+      .checked,.unchecked{
+        display: inline-block;
+        height:.32rem;
+        width:.32rem;
+        vertical-align:top;
+        margin-right:.08rem;
+      }
+      .checked{
+        @include bgPosition(804,310,32,32,346,0);
+      }
+      .unchecked{
+      @include bgPosition(804,310,32,32,399,0);
+
+      }
+    }
+  }
+}

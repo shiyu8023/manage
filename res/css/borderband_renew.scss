@@ -1,0 +1,94 @@
+@import "../common/mixin.scss";
+#app{
+  height:100%;
+  overflow:auto;
+  color:black;
+  .container{
+    min-height:100%;
+    position: relative;
+    .header{
+      .install_title{
+        padding:.46rem 0;
+        text-align: center;
+        h2{
+          font-size:.48rem;
+        }
+        p{
+          font-size:.32rem;
+          color:rgb(254,65,65)
+        }
+      }
+      .install_message{
+        padding:0 0 .2rem .31rem;
+        .title{
+          font-size:.3rem;
+        }
+        .user_name,.user_phone{
+          font-size:.24rem;
+          color:rgb(133,133,133);
+          margin-top:.2rem;
+        }
+        .user_phone{
+          span{
+            color:black;
+          }
+        }
+      }
+      .line{
+        height:.2rem;
+        background-color: rgb(232,237,240);
+      }
+    }
+    .main{
+      padding:.18rem .32rem 2.42rem .32rem;
+      .tv_title{
+        font-size:.3rem;
+        margin-bottom: .28rem;
+        color: rgb(254,65,65);
+      }
+      .tv_text{
+        font-size:.22rem;
+        &.margin_bottom{
+          margin-bottom: .38rem;
+        }
+      }
+    }
+    .footer{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      height:2.24rem;
+      border-top:1px solid rgb(198,203,207);
+      .choice{
+        font-size:.26rem;
+        padding:.26rem 0 .26rem .34rem;
+        input{
+          outline: none;
+        }
+        a{
+          color:rgb(59,213,254);
+          text-decoration: underline;
+        }
+      }
+      .btn_group{
+        .btn{
+          @include flexible(1);
+          width:2.75rem;
+          height:.9rem;
+          line-height:.9rem;
+          font-size:.32rem;
+          margin: 0 .34rem;
+          @include borderRadius(.12rem);
+          color:white;
+          &.deal{
+            background-color: rgb(174,174,174);
+          }
+          &.deal_active,&.no_deal {
+            background-color: rgb(59, 213, 254);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "../common/mixin.scss";
+.container{
+  .header{
+    height:1.89rem;
+    padding:0 .2rem;
+    @include boxSizing(border-box);
+    .position_search{
+      padding: .2rem 0;
+      input{
+        height:.58rem;
+        width:100%;
+        @include boxSizing(border-box);
+        border:.05rem solid rgb(188,222,222);
+        font-size:.24rem;
+        padding-left:.1rem;
+      }
+    }
+    .prompt{
+      font-size:.2rem;
+      color:rgb(217,217,217);
+      border-bottom:.01rem solid;
+      padding-bottom:.2rem;
+    }
+  }
+  .main{
+    position:absolute;
+    top:1.89rem;
+    right:0;
+    left:0;
+    bottom:0;
+    .main_content{
+      min-height:100%;
+      @include bgImage('../common/img/bg_1.png');
+      padding:0 .2rem;
+      position: relative;
+      .position_result{
+        padding-bottom:.79rem;
+        ul li{
+          font-size:.24rem;
+          color:rgb(166,166,166);
+          margin-bottom:.18rem;
+        }
+        .register{
+          margin:.29rem 0;
+        }
+      }
+    }
+  }
+}

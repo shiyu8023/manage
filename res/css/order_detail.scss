@@ -1,0 +1,151 @@
+@import "../common/mixin.scss";
+#app {
+  height: 100%;
+  overflow: auto;
+  .container {
+    .title {
+      padding: .18rem .3rem;
+      font-size: .28rem;
+      color: rgb(13, 161, 255);
+      background-color: rgb(246, 246, 246);
+      border-bottom: .01rem solid rgb(230, 230, 230);
+      p {
+        padding-left: .14rem;
+        border-left: .03rem solid
+      }
+    }
+    .handle_message {
+      .message_detail {
+        li {
+          font-size: .26rem;
+          color: rgb(51, 51, 51);
+          align-items: center;
+          -webkit-align-items: center;
+          -moz-align-items: center;
+          padding: .18rem .3rem;
+          border-bottom: .01rem solid rgb(186, 196, 197);
+          .message_logo {
+            @include flexible(0 0 .31rem);
+            &.type_logo {
+              height: .26rem;
+              @include bgPosition(804,310,31,26,44,0);
+            }
+            &.time_logo {
+              height: .25rem;
+              @include bgPosition(804,310,31,25,190,0);
+            }
+            &.home_logo {
+              height: .27rem;
+              @include bgPosition(804,310,31,27,136,0);
+            }
+            &.name_logo {
+              height: .29rem;
+              @include bgPosition(804,310,31,29,239,0);
+            }
+            &.tel_logo {
+              height: .27rem;
+              @include bgPosition(804,310,31,27,297,0);
+            }
+            &.address_logo {
+              height: .33rem;
+              @include bgPosition(804,310,31,33,88,0);
+            }
+          }
+          .message_title {
+            @include flexible(2);
+            text-align: center;
+          }
+          .message_text {
+            @include flexible(4);
+          }
+        }
+      }
+    }
+    .handle_step{
+      .step_detail{
+        padding-bottom:1.63rem;
+        li{
+          padding:.18rem .3rem 0 .3rem;
+          position: relative;
+          .progress_line{
+            position: absolute;
+            z-index:-1;
+            top:0.3rem;
+            bottom:-0.3rem;
+            left:.36rem;
+            border-left:1px solid rgb(76,190,255);
+          }
+          .step_title{
+            align-items: center;
+            -moz-align-items: center;
+            -webkit-align-items: center;
+            .progress_bar{
+              @include flexible(0 0 .57rem);
+              .mark{
+                display:inline-block;
+                height:.14rem;
+                width: .14rem;
+                background-color: rgb(76,190,255);
+              }
+              &.progress_end{
+                .mark_border{
+                  width:.18rem;
+                  padding:.02rem 0;
+                  text-align: center;
+                  border:.01rem solid rgb(76,190,255);
+                  background-color:white;
+                  position: relative;
+                  left:-.03rem;
+                }
+              }
+            }
+            .handle_status{
+              font-size: .24rem;
+              color:rgb(51,51,51);
+              &.finished_order{
+                color:rgb(76,190,255);
+              }
+            }
+            .time{
+              font-size:.22rem;
+              color:rgb(151,151,151);
+              text-align: right;
+            }
+            .handle_status,.time{
+             @include flexible(1);
+            }
+          }
+          .step_reason{
+            margin-left: .57rem;
+            font-size:.22rem;
+            color:rgb(151,151,151);
+            .worker_phone a{
+              color:rgb(76,190,255);
+            }
+          }
+          .line{
+            margin-left:.57rem;
+            height:.18rem;
+            border-bottom:.01rem solid rgb(186,196,197);
+          }
+        }
+        .reminder{
+          margin-top:.18rem;
+          text-align: right;
+          padding:0 .3rem;
+          span{
+            font-size:.24rem;
+            color:rgb(76,190,255);
+            padding:.09rem;
+            border:.01rem solid;
+            @include borderRadius(.08rem);
+            &:active{
+              color:white;
+              background-color:rgb(76,190,255) ;
+            }
+          }
+        }
+      }
+    }
+  }
+}

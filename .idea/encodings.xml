@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/res/common/css/common.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/common/css/mint_ui.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/common/js/http.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/css/broadband_manage.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/css/index.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/css/order_detail.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/plugs/myalert/myalert.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/plugs/myalert/myalert.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/view/data.json" charset="UTF-8" />
+  </component>
+</project>

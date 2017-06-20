@@ -1,0 +1,128 @@
+@import "../common/mixin.scss";
+#app{
+  height:100%;
+  overflow:auto;
+  .no_message,.message {
+    min-height:100%;
+    position: relative;
+    .handle_btn{
+      font-size:.26rem;
+      color:rgb(255,255,255);
+      background-color: rgb(59,164,245);
+      @include borderRadius(.1rem);
+      margin:0 auto;
+      padding:.22rem 1.46rem;
+    }
+  }
+  .no_message{
+    padding:0 .42rem;
+    .top{
+      padding-bottom:3rem;
+      text-align: center;
+      .title{
+        color:rgb(77,77,77);
+        margin:.94rem 0;
+        font-size:.26rem;
+        text-align: justify;
+      }
+    }
+    .bottom{
+      height:.67rem;
+      position: absolute;
+      bottom:1.64rem;
+      left:.42rem;
+      right:.42rem;
+      font-size:.2rem;
+      color:rgb(76,190,255);
+      .share{
+        display:inline-block;
+        height:.68rem;
+        width:.84rem;
+        vertical-align:middle;
+        margin-left:.32rem;
+        &.wechat{
+          @include bgPosition(804,310,84,68,572,66);
+        }
+        &.friend{
+          @include bgPosition(804,310,84,68,370,66);
+        }
+        &.zone{
+          @include bgPosition(804,310,84,68,473,65);
+        }
+      }
+    }
+  }
+  .message{
+    display: block;
+    .order_content{
+      padding-bottom: 2.31rem;
+      li{
+        padding:0 .28rem;
+        border-bottom: .1rem solid rgb(240,240,240);
+        position: relative;
+        .order_title,.order_basic{
+          border-bottom:.01rem solid rgb(186,196,197);
+        }
+        .order_title{
+          padding:.2rem 0;
+          span{
+            @include flexible(1);
+            &.time{
+              font-size:.2rem;
+              color:rgb(153,153,153);
+              text-align: left;
+            }
+            &.status{
+              font-size:.24rem;
+              color:rgb(76,190,255);
+              text-align: right;
+            }
+          }
+        }
+        .order_basic{
+          font-size:.24rem;
+          color:rgb(51,51,51);
+          padding:.28rem 0;
+        }
+        .detail_btn{
+          height:.66rem;
+          line-height: .66rem;
+          font-size:.24rem;
+          color:rgb(76,190,255);
+          text-align: right;
+          span{
+            border:.01rem solid rgb(76,190,255);
+            padding:.05rem .13rem;
+            @include borderRadius(.08rem);
+            &:active{
+              color:white;
+              background-color:rgb(76,190,255) ;
+            }
+          }
+        }
+        .order_logo{
+          height:1.22rem;
+          width:1.23rem;
+          position: absolute;
+          bottom:0;
+          right:0;
+          &.end_order{
+            @include bgPosition(804,310,123,122,289,188);
+          }
+          &.finish_order{
+            @include bgPosition(804,310,123,122,142,187);
+          }
+        }
+      }
+    }
+    .bottom{
+      height:2.31rem;
+      line-height: 2.31rem;
+      text-align: center;
+      position: absolute;
+      bottom:0;
+      left:0;
+      right:0
+    }
+  }
+}

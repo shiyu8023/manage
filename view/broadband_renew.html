@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>办理登记</title>
+    <link rel="stylesheet" href="../res/common/css/base.css"/>
+    <link rel="stylesheet" href="../res/css/borderband_renew.css"/>
+    <link rel="stylesheet" href="../res/plugs/myalert/myalert.css"/>
+
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <div class="install_title">
+                    <h2>20M宽带一年</h2>
+                    <p>您已成功登记报装宽带!</p>
+                </div>
+                <div class="install_message">
+                    <p class="title">报装信息：</p>
+                    <p class="user_name">办理人姓名：<span>张某某</span></p>
+                    <p class="user_phone">办理人电话：<span>18271408787</span></p>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="main">
+                        <p class="tv_title">
+                            20M宽带续约成功，您还可以免费办理一年期宽带电视业务。
+                        </p>
+                        <p class="tv_text margin_bottom ">
+                            2017年1月1日-2017年3月31日，办理20M以上宽带开户或续约的客户，可免费使用宽带电视业务1年。
+                        </p>
+                        <p class="tv_text">
+                            注意事项：<br>1、本活动不含388宽带客户、集团代付客户、及随心王、无限量用户；<br>2、宽带电视业务优惠合约周期为1年，需同时捆绑宽带使用，合约期内不能取消宽带电视业务及宽带业务；<br>3、同一宽带客户仅能开通一个宽带电视业务，优惠合约到期后宽带电视业务按20元/月收费。<br>温馨提示：客户使用过程中出现故障可拨打13922820000热线报障。
+                        </p>
+            </div>
+            <div class="footer">
+                <div class="choice">
+                    <label>
+                        <input type="checkbox"  v-model="isDeal"/>
+                        免费办理一年期宽带电视业务
+                    </label>
+                    <a @click.prevent="showAgreement">查看协议</a>
+                </div>
+                <div class="btn_group flex">
+                    <button class="btn" :class="isDeal?'deal_active':'deal'" :disabled="!isDeal">立即办理</button>
+                    <button class="no_deal btn">我不需要</button>
+                </div>
+            </div>
+        </div>
+        <div  id="alert_part">
+        </div>
+    </div>
+</body>
+<script src="../res/common/js/rem.js"></script>
+<script src="../res/common/js/vue.min.js"></script>
+<script src="../res/plugs/myalert/myalert.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            tv_msg:{
+                'yd':{'title':'约定使用业务','content':['客户需承诺使用58元及以上4G套餐及20M宽带业务14个月，自办理优惠次月起生效并承诺使用至优惠期结束，不得取消或变更。']},
+                'yh':{'title':'优惠有效期','content':['本优惠在办理次月起生效，有效期14个月(新装客户在完成安装次月起生效)。']},
+                'hf':{'title':'话费到账','content':['所得话费从优惠生效月起分月返还，仅能用于宽带或流量年包消费。']},
+                'xf':{'title':'最低消费','content':['客户需承诺自本优惠生效当月起连续14个自然月，每月最低消费58元，如当月客户消费不足承诺消费金额，全球通号码当月按最低消费金额扣费，预付费号码将在次月补扣最低消费差额。']},
+                'ts':{'title':'注意事项','content':['协议有效期内限办一次。客户在协议有效期内承诺不以任何理由过户、销户或转品牌，否则，我司有权扣除客户尚未返还的话费并收取客户承诺使用期内应交纳的费用(含低消)作为违约金。','如移动号码处于欠费等非正常状态，则中国移动光宽带将被暂停使用，待移动号码缴清欠费恢复正常使用状态后方','如果因网络资源不足、管道线路不通、第三方阻挠等客观原因导致无法安装成功，本合约自动终止，双方互不承担责任。','优惠到期后，如您未续约或办理其他优惠方案，为保证您的正常使用，系统将自动为您转为对应速率的月套餐（20M资费：60元/月）。']}
+            },
+            isDeal:false
+        },
+        methods:{
+            showAgreement:function(){
+                sweet({type:'1',msg:this.tv_msg})
+            }
+        }
+    })
+</script>
+</html>
